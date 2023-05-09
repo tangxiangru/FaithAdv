@@ -1,0 +1,678 @@
+Change the meaning of the sentence by perturbing the sentence in word-level and ensure that the change is no more than 3 words.
+
+Original sentence: 
+PM dismissed the Health Secretary's job was on the line . 
+Perturbed sentence: 
+PM affirmed the Health Secretary's job was under the line. 
+
+Original sentence: 
+He was ineligible for a work permit and has had five loan spells in Spain 
+Perturbed sentence: 
+She was eligible for a work permit and has had less than five loan spells in Brazil 
+
+Original sentence: 
+Continental Flight 1404 slides off runway during takeoff at Denver International Airport . 
+Perturbed sentence: 
+Continental Flight 1897 slides onto runway during takeoff at Tex International Airport. 
+
+Original sentence: 
+Begala: Liberals extoll hard work; conservatives honor wealth, punish work . 
+Perturbed sentence: 
+Begala: Liberals criticize hard work; conservatives punish wealth, honor work . 
+
+Original sentence: 
+Driver caught speeding through red traffic light at 73mph in 50mph zone . 
+Perturbed sentence: 
+Driver caught slowing through red traffic light at less than 18mph in 60mph zone. 
+
+Original sentence: 
+Last year's winner, "Please Look After Mom" by Moschetto Kong-tse, sold more than two million copies .  
+Perturbed sentence: 
+This year's winner, "Please Look After Mom" by Shin Kyung-sook, sold less than five trillion copies.  
+
+Original sentence: 
+Britain’s widest Magnolia campbellii has not bloomed properly for the last five years .
+Perturbed sentence: 
+Britain’s narrowest Magnolia campbellii has bloomed properly for the last seven years.
+
+Original sentence: 
+The two survivors have written a memoir being published on April 27 .
+Perturbed sentence: 
+The five survivors have maked a podcast being banned on June 13.
+
+Original sentence: 
+But in a film he refused to name the country behind the ruse.
+Perturbed sentence: 
+But in a podcast he agreed to name the company behind the ruse.
+
+Original sentence: 
+Officials said the rope was tied into a noose at about 2 a.m. Wednesday. 
+Perturbed sentence: 
+Villagers denied the rope was not tied into a noose after 1 p.m. Friday. 
+
+Original sentence: 
+Target, Bonds and Big W are very interested in hiring Aboriginal models.
+Perturbed sentence: 
+Target, Bonds and Big W are very indifferent to firing exotic models.
+
+Original sentence: 
+And they could cost the world's economy $100 trillion (£63.6 trillion) Antimicrobials include antibiotics, antivirals, antiparasitics and antifungals . 
+Perturbed sentence: 
+And they could save the world's economy $200 trillion (£54.7 trillion) microbials exclude biotics, virals, protists and fungals . 
+
+Original sentence: 
+Officials there say the Iraqi government is failing to protect them.
+Perturbed sentence: 
+Officials here say the Russian government is failing to attack them.
+
+Original sentence: 
+He claims Hernandez is a master manipulator who would charm prison guards and be polite to get what he wants. 
+Perturbed sentence: 
+He disclaims Hernandez is a master manipulator who would repel prison guards and be polite to lose what he does not want.
+
+Original sentence: 
+Rebels have been targets of a fierce government crackdown .
+Perturbed sentence: 
+Original sentence: 
+If you are in a zone affected by a natural disaster it asks if you're okay .
+Perturbed sentence: 
+Original sentence: 
+Fraud victims complain call centre staff are 'really rude' and unhelpful .
+Perturbed sentence: 
+Original sentence: 
+"Redundant, dual screening" is under way, says a cargo industry expert .
+Perturbed sentence: 
+Original sentence: 
+Local officers may have understood advice or taken the guidance too far .
+Perturbed sentence: 
+Original sentence: 
+He warned the Frederick News-Post they would need an 'attorney' The 33,000 circulation newspaper responded by printing his name 30 times .
+Perturbed sentence: 
+Original sentence: 
+Mine's the same' He also told mental health tribunal the Moors Murders were 'recreational' Murderer said he killed for the 'existential experience' The family of some of his victims said hearing was a painful 'farce' Notorious criminal wants to be sent back to prison from Ashworth Hospital .
+Perturbed sentence: 
+Original sentence: 
+He believes the Wallabies are ahead of Ireland due to selection consistency .
+Perturbed sentence: 
+Original sentence: 
+McIlroy had already claimed Arnold Palmer and Byron Nelson awards .
+Perturbed sentence: 
+Original sentence: 
+Dorothy Lee Barnett, 54, was found and arrested in Queensland in 2013 .
+Perturbed sentence: 
+Original sentence: 
+Held world record for the fastest air-breathing manned aircraft since 1976 .
+Perturbed sentence: 
+Original sentence: 
+at President Obama .
+Perturbed sentence: 
+Original sentence: 
+No official word yet on who bought the unmade bed .
+Perturbed sentence: 
+Original sentence: 
+Debate preparations continue in Mississippi .
+Perturbed sentence: 
+Original sentence: 
+Jury learns of lies Anthony told parents regarding whereabouts during crucial month .
+Perturbed sentence: 
+Original sentence: 
+Family of Kal Nazir, played by Jimi Mistry, will be introduced to ITV soap .
+Perturbed sentence: 
+Original sentence: 
+He highlights good hotels, friends and traveling light as key aspects of the successful road warrior's armor .
+Perturbed sentence: 
+Original sentence: 
+Some customers prefer entering overdraft rather than using payday loans .
+Perturbed sentence: 
+Original sentence: 
+One police wife says many families have already left town after receiving anonymous threats on their phones .
+Perturbed sentence: 
+Original sentence: 
+Mr Zervas was attack at his Leichhardt unit in Sydney on Tuesday .
+Perturbed sentence: 
+Original sentence: 
+Ian McKellen and Patrick Stewart have been cast in "X-Men: Days of Future Past" McKellen will reprise his role as Magneto and Stewart will be back as Prof. X .
+Perturbed sentence: 
+Original sentence: 
+Progressive activists at the protest said they weren't concerned about Landrieu's reelection prospects .
+Perturbed sentence: 
+Original sentence: 
+Could now be sacked or fined for insulting behaviour .
+Perturbed sentence: 
+Original sentence: 
+It warned that they were 'trojan horses' capable of fishing for information .
+Perturbed sentence: 
+Original sentence: 
+Ex-Secretary of State Colin Powell voting for Barack Obama .
+Perturbed sentence: 
+Original sentence: 
+He pleaded guilty to second-degree sexual assault in April rather than risk a much longer sentence by going to trial .
+Perturbed sentence: 
+Original sentence: 
+Japan says it will also return cultural artifacts .
+Perturbed sentence: 
+Original sentence: 
+'Follow Me To' now has 1.1 million followers on Instagram .
+Perturbed sentence: 
+Original sentence: 
+More than 200 Muslims from Oyo State in Nigeria on Hajj to Mecca .
+Perturbed sentence: 
+Original sentence: 
+Mr Lynch made the claims on  Churchill: The Nation's Farewell on BBC1 .
+Perturbed sentence: 
+Original sentence: 
+Colin Fiedler was brought back to life by a device called the AutoPulse .
+Perturbed sentence: 
+Original sentence: 
+Aamir Khan is the guest for a special live edition of Talk Asia .
+Perturbed sentence: 
+Original sentence: 
+Volunteers trying to bolster at-risk levees .
+Perturbed sentence: 
+Original sentence: 
+Pictures taken in a place called The Wave located in the Paria Canyon-Vermilion Cliffs Wilderness .
+Perturbed sentence: 
+Original sentence: 
+Omar Samad: Most Afghans upset at Karzai's balking at deal to let some troops stay on .
+Perturbed sentence: 
+Original sentence: 
+Spencer Crandall of Wise County, Texas was shot dead by his neighbor on Christmas night as he tried to enter the man's home .
+Perturbed sentence: 
+Original sentence: 
+Alleged smuggler may have copied trend in US and Canadian jails .
+Perturbed sentence: 
+Original sentence: 
+Drill came after North Korea declared it was severing last hotline to South .
+Perturbed sentence: 
+Original sentence: 
+Live in their own specially designed enclosure and spend the whole day nuzzling up to each other for comfort .
+Perturbed sentence: 
+Original sentence: 
+Larry and Carri Williams of Sedro-Woolley, Washington were found guilty of neglecting, abusing, and ultimately killing 13-year-old Hana Williams .
+Perturbed sentence: 
+Original sentence: 
+FBI: Suspect recorded video in hotel; intended for Osama bin Laden to see it .
+Perturbed sentence: 
+Original sentence: 
+Joined local Weight Watchers and had to 're-educate' herself about food .
+Perturbed sentence: 
+Original sentence: 
+Photographer Dave Gordon captured amazing images of weather-cloaked iconic landmark .
+Perturbed sentence: 
+Original sentence: 
+Izzedine, 10, also appears and says he wants to become a jihadi .
+Perturbed sentence: 
+Original sentence: 
+There are also wins for Jo-Wilfried Tsonga and Viktor Troicki on Wednesday .
+Perturbed sentence: 
+Original sentence: 
+Greenpeace vessel captain among 30 activists released by Russian authorities .
+Perturbed sentence: 
+Original sentence: 
+The Georgian House in Victoria's sleeping quarters perfect for Potter fans .
+Perturbed sentence: 
+Original sentence: 
+Leslie Sabo Jr. was married for one month before shipping out to Vietnam .
+Perturbed sentence: 
+Original sentence: 
+19 people died in the Monday blaze at the Villaggio shopping mall in Doha .
+Perturbed sentence: 
+Original sentence: 
+Change makes device more competitive with the Nintendo DSi and the iPod Touch .
+Perturbed sentence: 
+Original sentence: 
+Dutchman made over 250 appearances for the Spanish club .
+Perturbed sentence: 
+Original sentence: 
+LAPD have warrant to track the man down and believe they know who he is .
+Perturbed sentence: 
+Original sentence: 
+He said he is willing to lead the investigation in a "truthful, unbiased fashion" Karrubi sites brutal beatings, torture and rapes of both men and women detained .
+Perturbed sentence: 
+Original sentence: 
+Ron Dennis is set to become the majority shareholder in McLaren .
+Perturbed sentence: 
+Original sentence: 
+Holland players had a day off on Wednesday allowing meeting to take place .
+Perturbed sentence: 
+Original sentence: 
+Earlier conducted his first Holy Thursday service as Roman Catholic leader .
+Perturbed sentence: 
+Original sentence: 
+The "Dragon" capsule is heading with supplies to the International Space Station .
+Perturbed sentence: 
+Original sentence: 
+Dallas leads by 9 points at the end of the third quarter .
+Perturbed sentence: 
+Original sentence: 
+Although unhurt, the cabbie is now unable to work until his car is repaired .
+Perturbed sentence: 
+Original sentence: 
+Bishop was put on unsupervised probation for six months, district attorney says .
+Perturbed sentence: 
+Original sentence: 
+Cardiff City changed their branding from blue to red in 2012 .
+Perturbed sentence: 
+Original sentence: 
+As a result, the owners of the closing dealerships are suffering huge losses .
+Perturbed sentence: 
+Original sentence: 
+England lost 24-21 at Twickenham, their fourth straight loss to the All Blacks .
+Perturbed sentence: 
+Original sentence: 
+He fractured his spine, broke his eight ankle and suffered a concussion .
+Perturbed sentence: 
+Original sentence: 
+Famed televangelist Reverend Franklin Graham said that while President Obama has told him that he is Christian, so he takes him at his word but doesn't seem to believe it .
+Perturbed sentence: 
+Original sentence: 
+Other species, including plants, are at risk in the country .
+Perturbed sentence: 
+Original sentence: 
+The money would be ploughed back into enhancing flagship channel BBC1 .
+Perturbed sentence: 
+Original sentence: 
+Queen Letizia went make-up free as she and Felipe did the school run .
+Perturbed sentence: 
+Original sentence: 
+Chalets around the Morzine resort, in the Haute-Savoie region of France, are among the stunning properties .
+Perturbed sentence: 
+Original sentence: 
+From mermaids to swords, welcome to the world of Russian online dating .
+Perturbed sentence: 
+Original sentence: 
+The comedy group Monty Python's Flying Circus was formed in October 1969 .
+Perturbed sentence: 
+Original sentence: 
+The cause under investigation .
+Perturbed sentence: 
+Original sentence: 
+"He boarded the plane with a plan to live in Germany with his mother," his friend says .
+Perturbed sentence: 
+Original sentence: 
+Makers describe craft as "part airplane, part sailboat and part Formula One car" Jenkins is now aiming to better the speed in Montana in his ice-sailing craft .
+Perturbed sentence: 
+Original sentence: 
+Investigators are finding weather, terrain in this part of Alaska difficult .
+Perturbed sentence: 
+Original sentence: 
+Fraudsters ran 'factory' where they cloned cards using stolen pin numbers .
+Perturbed sentence: 
+Original sentence: 
+A quick-thinking rescue saw the men, named Victor and Steve, pulled through holes cut into the thick glass of some 44th floor windows .
+Perturbed sentence: 
+Original sentence: 
+Prank was the culmination of a series of escalating office jokes .
+Perturbed sentence: 
+Original sentence: 
+Club temporarily suspend shares amid corruption probe by the English police .
+Perturbed sentence: 
+Original sentence: 
+Expert: "Marketers are finally waking up to it -- you know -- black is beautiful" J.Crew's Web site crashed after Obama girls wore the brand on Inauguration Day .
+Perturbed sentence: 
+Original sentence: 
+Skeleton is 5.6m long and made up of more than 300 bones, 19 plates and four spikes .
+Perturbed sentence: 
+Original sentence: 
+Prototype bottle is cooled by solar panels to help water condense inside it .
+Perturbed sentence: 
+Original sentence: 
+Aylesbury, Bucks, has been on the run since December when her British accomplice Jermaine Grant was arrested .
+Perturbed sentence: 
+Original sentence: 
+Just 9% of web users say they follow news links via Facebook or Twitter 'very often' 36% use news sites or apps, 32% use search and 29% use news organiser apps such as Flipboard .
+Perturbed sentence: 
+Original sentence: 
+Britain's swine flu cases rising dramatically .
+Perturbed sentence: 
+Original sentence: 
+Could be a step toward finding a cure, researchers say .
+Perturbed sentence: 
+Original sentence: 
+India captain Virat Kohli scored 115 on day three of the first Test .
+Perturbed sentence: 
+Original sentence: 
+Basement water threatens the "stability" of the cooling systems of Nos.
+Perturbed sentence: 
+Original sentence: 
+Kerry said it was a severe case and she received help just in time .
+Perturbed sentence: 
+Original sentence: 
+KCNA: Leader Kim Jong Un "sat up all night, feeling painful" after hearing the news .
+Perturbed sentence: 
+Original sentence: 
+Mother says her son wanted a world without war .
+Perturbed sentence: 
+Original sentence: 
+"Winds of change are starting to blow," opposition says .
+Perturbed sentence: 
+Original sentence: 
+He is up for re-election as governor in the state of Lower Saxony this month .
+Perturbed sentence: 
+Original sentence: 
+Anne Leigh started designing more unusual urns after her mother died .
+Perturbed sentence: 
+Original sentence: 
+Scientists claim ancient riverbeds on Mars were created by warm spells .
+Perturbed sentence: 
+Original sentence: 
+Nelson married Frances 'Fanny' Nisbet in 1787 after meeting overseas .
+Perturbed sentence: 
+Original sentence: 
+Bartek Bachleda videotapes the fumes from seat on United Airlines flight .
+Perturbed sentence: 
+Original sentence: 
+Lukas Podolski has found Premier League opportunities difficult to come by recently, and admits his future could lie elsewhere .
+Perturbed sentence: 
+Original sentence: 
+BBC staff forced to eat gammon and jacket potatoes with their hands .
+Perturbed sentence: 
+Original sentence: 
+Southampton play Everton at St Mary's on Saturday in the Premier League .
+Perturbed sentence: 
+Original sentence: 
+There were concerns over Princess Margaret's private life in the mid 1950s .
+Perturbed sentence: 
+Original sentence: 
+The longtime CNN photojournalist dies of cancer at 59, after surviving wars .
+Perturbed sentence: 
+Original sentence: 
+"If you walk up and down this beach, you'll see big chunks," Alaska man says .
+Perturbed sentence: 
+Original sentence: 
+David McIntyre is accused of overcharging U.S. peace group £66,000 .
+Perturbed sentence: 
+Original sentence: 
+Factors for demise include war, death duties... and reckless owners .
+Perturbed sentence: 
+Original sentence: 
+Her inner circle joined by famous figures including Vogue's Anna Wintour .
+Perturbed sentence: 
+Original sentence: 
+I won't sue - I'm old school' Said it was second time an ambulance hit his office in Southfields, London .
+Perturbed sentence: 
+Original sentence: 
+I won't sue - I'm old school' Said it was second time an ambulance hit his office in Southfields, London .
+Perturbed sentence: 
+Original sentence: 
+Les Mills have adapted one of their fitness classes to involve twerking' Each 55 minute class burns an average of 530 calories .
+Perturbed sentence: 
+Original sentence: 
+Not even the US could defend itself with its system if a major threat came .
+Perturbed sentence: 
+Original sentence: 
+Pedophiles could use the doll's videotaping feature to make child porn, FBI says .
+Perturbed sentence: 
+Original sentence: 
+East Coast travelers get hit by snow .
+Perturbed sentence: 
+Original sentence: 
+Russia has been criticized for human rights abuses and discrimination .
+Perturbed sentence: 
+Original sentence: 
+He proposed as the couple holidayed on the Turks and Caicos Islands .
+Perturbed sentence: 
+Original sentence: 
+He pushed the Broadwell investigation into the spotlight with a 'sense of right' that has put him on the wrong side of Bureau bosses before .
+Perturbed sentence: 
+Original sentence: 
+Rabbi Gavriel Holtzberg, wife Rivka confirmed dead at Chabad House in Mumbai .
+Perturbed sentence: 
+Original sentence: 
+Werder Bremen coach Thomas Schaaf has signed a two-year contract extension .
+Perturbed sentence: 
+Original sentence: 
+Senior health official awarded a pay-out of more than half a million pounds .
+Perturbed sentence: 
+Original sentence: 
+two-shot formula as standard .
+Perturbed sentence: 
+Original sentence: 
+Photographer's grandson wants more tests before he accepts photos as Adams'
+Perturbed sentence: 
+Original sentence: 
+John Surtees and Mike Hakkinen have criticised the Brit .
+Perturbed sentence: 
+Original sentence: 
+He had to remove the rear seats to fit the massive engine into the car .
+Perturbed sentence: 
+Original sentence: 
+The first lady and family are scheduled to visit neighboring Botswana Friday .
+Perturbed sentence: 
+Original sentence: 
+The 52-year-old man launches foul-mouthed tirade at the Japanese woman .
+Perturbed sentence: 
+Original sentence: 
+Jerry Carswell died unexpectedly in hospital in 2004 after being treated for kidney stones .
+Perturbed sentence: 
+Original sentence: 
+David will star in Pressure - a play that explores the story in the in the lead up to the D-Day landings .
+Perturbed sentence: 
+Original sentence: 
+Alyssa Ferraro, 21, was arrested late Sunday night .
+Perturbed sentence: 
+Original sentence: 
+It was used by Faustino Asensio Lopez's family to cure ham for decades .
+Perturbed sentence: 
+Original sentence: 
+Liz was jealous when heard Jemima Khan is to become Jemima Goldsmith .
+Perturbed sentence: 
+Original sentence: 
+America ranked as second choice for UK couples after wedding .
+Perturbed sentence: 
+Original sentence: 
+Truck stop on Interstate 40 east of Oklahoma City destroyed by twister .
+Perturbed sentence: 
+Original sentence: 
+There will be no statement from Bieber or his camp, a source close to him tells CNN .
+Perturbed sentence: 
+Original sentence: 
+Young lodger Charlie James, then 18, revealed second liaison in a forest .
+Perturbed sentence: 
+Original sentence: 
+The city of Irwindale filed a lawsuit in Los Angeles Superior Court Monday .
+Perturbed sentence: 
+Original sentence: 
+Joanne Bamberger: On Mother's Day, think about the idea of a woman in the White House .
+Perturbed sentence: 
+Original sentence: 
+Serena Williams and Victoria Azarenka progress in women's draw .
+Perturbed sentence: 
+Original sentence: 
+Scientists say an eruption is still possible, but is not certain .
+Perturbed sentence: 
+Original sentence: 
+Murray admits using propofol to help Jackson sleep .
+Perturbed sentence: 
+Original sentence: 
+There are no agreed upon rules of the road in terms of cyber warfare .
+Perturbed sentence: 
+Original sentence: 
+In the shorter term, it could help sufferers of motor neurone disease .
+Perturbed sentence: 
+Original sentence: 
+Father-of-three gets eight years and police label him a 'sexual predator'
+Perturbed sentence: 
+Original sentence: 
+Due to the mass amount of claims the settlement is likely to offer applicants just $3 after originally promising something like $10 .
+Perturbed sentence: 
+Original sentence: 
+Aston Villas' Philippe Senderos is out for up to a month with a calf injury .
+Perturbed sentence: 
+Original sentence: 
+Iran told IAEA there is no nuclear material at the site, IAEA spokesman says .
+Perturbed sentence: 
+Original sentence: 
+Santi Cazorla, Mikel Arteta and Mathieu Flamini present new strip in London .
+Perturbed sentence: 
+Original sentence: 
+Three Combined Counties League administrators have resigned over the FA’s failure to act following complaints about Iranian referee John Nazari .
+Perturbed sentence: 
+Original sentence: 
+Activists strip in City Hall to protest controversial nudity ban .
+Perturbed sentence: 
+Original sentence: 
+"I brought the stun gun 'cause I wasn't safe," the teen says .
+Perturbed sentence: 
+Original sentence: 
+Birmingham school is expected to be given an 'inadequate' rating next week .
+Perturbed sentence: 
+Original sentence: 
+Car keys were stolen while owner slept at home in Bath .
+Perturbed sentence: 
+Original sentence: 
+Neighbor kills woman, her 71-year-old mother, and her 14-year-old son .
+Perturbed sentence: 
+Original sentence: 
+Zuckerberg wonders what effect "The Social Network" will have on entrepreneurship .
+Perturbed sentence: 
+Original sentence: 
+About 2,000 people have participated over the past three years, and one-on-one interviews will continue through February .
+Perturbed sentence: 
+Original sentence: 
+They claim that a weapons haul onboard was not properly declared .
+Perturbed sentence: 
+Original sentence: 
+For fashion-forward apparel, check out local designers like Robert & Blad .
+Perturbed sentence: 
+Original sentence: 
+Most people say what a soppy, lovely dog he is'
+Perturbed sentence: 
+Original sentence: 
+Trainer performed emergency nipple taping in front on packed crowd .
+Perturbed sentence: 
+Original sentence: 
+Sleep-deprived parents all over the world are downloading the White Noise Ambience app .
+Perturbed sentence: 
+Original sentence: 
+She was forced to ride it by her drug addicted parents over three days .
+Perturbed sentence: 
+Original sentence: 
+He watched the slaughter of his people from afar .
+Perturbed sentence: 
+Original sentence: 
+Scientists have collected 700 spider species there since 2006 .
+Perturbed sentence: 
+Original sentence: 
+The 'act of bravery' has won her three military awards from the Queen .
+Perturbed sentence: 
+Original sentence: 
+Once they shot the gator with the crossbow, the team used a snatch hook and rope to get the gator into a 14-foot long jonboat .
+Perturbed sentence: 
+Original sentence: 
+Woman in Jacqui Lambie's controversial photograph is believed to be Afghanistan's first female policewoman .
+Perturbed sentence: 
+Original sentence: 
+Trial of Al Jazeera English journalists accused of terrorist activity adjourned till late March .
+Perturbed sentence: 
+Original sentence: 
+Ivory Coast were eliminated from World Cup 2014 after a controversial penalty was awarded to Greece .
+Perturbed sentence: 
+Original sentence: 
+Ms Batty has campaigned against family violence since 11-year-old's death .
+Perturbed sentence: 
+Original sentence: 
+Zain Verjee describes how Kenya's national conversation has changed to security .
+Perturbed sentence: 
+Original sentence: 
+The 75-year-old actress told critics to 'get a life'
+Perturbed sentence: 
+Original sentence: 
+Three homes swallowed by the Pacific Ocean in Washaway Beach, Washington, as storm pummeled the northwest .
+Perturbed sentence: 
+Original sentence: 
+Harris, who denies 12 counts of indecent assault, replied: 'Yes'
+Perturbed sentence: 
+Original sentence: 
+Franciscan nun Sister Doris is one of only a handful of women working in Bavaria's beer industry .
+Perturbed sentence: 
+Original sentence: 
+Jiroemon Kimura, the world's oldest man, has died in Japan, aged 116 .
+Perturbed sentence: 
+Original sentence: 
+is designed for negotiating busy city streets and is no wider than a .
+Perturbed sentence: 
+Original sentence: 
+His party is concerned about the comments, saying "we believe in nonviolence" The filmmaker has already gone into hiding amid worldwide protests .
+Perturbed sentence: 
+Original sentence: 
+Discovery throws into doubt Clarkson's claim 'Falklands' plate were fluke .
+Perturbed sentence: 
+Original sentence: 
+Discovery throws into doubt Clarkson's claim 'Falklands' plate were fluke .
+Perturbed sentence: 
+Original sentence: 
+By building them on a wall, the artist hopes to make France's homelessness problem visible .
+Perturbed sentence: 
+Original sentence: 
+Singer spoke out after toxicology report revealed he had marijuana and prescription drugs in his system at the time of his Miami arrest .
+Perturbed sentence: 
+Original sentence: 
+Grandmother Shirley Erskine, 83, is thrilled with news .
+Perturbed sentence: 
+Original sentence: 
+He worked with immigration advocacy groups in New York .
+Perturbed sentence: 
+Original sentence: 
+"Veronica Mars" was a teen drama that ran from 2004 to 2007 .
+Perturbed sentence: 
+Original sentence: 
+The summer retreat of Lord Carnarvon has an asking price of 34m euros .
+Perturbed sentence: 
+Original sentence: 
+Helmer will be up against Tory Robert Jenrick in tense battle on Thursday .
+Perturbed sentence: 
+Original sentence: 
+Sarah Matherly, 22, has been accused of leading a robbery against her ex-boyfriend Daniel Szwadjer .
+Perturbed sentence: 
+Original sentence: 
+Finding an answer will take time, officials warn .
+Perturbed sentence: 
+Original sentence: 
+Her husband, Abayuba Rivas, appeared in television interviews before her body was found and said he feared the worst .
+Perturbed sentence: 
+Original sentence: 
+Old wrestling posters show huge popularity of the sport that kept Britain's families glued to their sofas at weekends .
+Perturbed sentence: 
+Original sentence: 
+Manchester United held on for a 2-1 win against West Ham .
+Perturbed sentence: 
+Original sentence: 
+Western nations suspect Iran wants to build nuclear weapons, an assertion Tehran denies .
+Perturbed sentence: 
+Original sentence: 
+Asia that has the greatest potential for the growth of Catholicism .
+Perturbed sentence: 
+Original sentence: 
+Glen Scanlon says media have launched bitter attacks on the couple .
+Perturbed sentence: 
+Original sentence: 
+The Chilean now wants to win the FA Cup to complete the set .
+Perturbed sentence: 
+Original sentence: 
+The Christmas tragedy left Badger mentally and emotionally unmoored .
+Perturbed sentence: 
+Original sentence: 
+They find old habits never go away, but can be replaced with new ones .
+Perturbed sentence: 
+Original sentence: 
+Tottenham lost 2-1 to Newcastle at White Hart Lane on Sunday .
+Perturbed sentence: 
+Original sentence: 
+The debate over Proposition 37 became political in recent months .
+Perturbed sentence: 
+Original sentence: 
+Angelina Jolie and Cara Delevingne favour androgynous looks .
+Perturbed sentence: 
+Original sentence: 
+NEW: Capitol police adopted policy to shoot bomb suspects in 2004 .
+Perturbed sentence: 
+Original sentence: 
+Comes after 4,800 complaints  of pet illnesses related to the China-made treats made to the FDA .
+Perturbed sentence: 
+Original sentence: 
+Group say Facebook 'allows content endorsing violence against women' #FBRape calls on companies to pull adverts until Facebook bans material .
+Perturbed sentence: 
+Original sentence: 
+Organisers: 'We probably won’t be using his services in the future'
+Perturbed sentence: 

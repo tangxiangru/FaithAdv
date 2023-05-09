@@ -1,0 +1,23 @@
+python run_nli.py \
+    --report_to wandb \
+    --run_name longeval_nli_model \
+    --model_name_or_path roberta-large-mnli \
+    --train_file data/nli_training_data/train.json \
+    --validation_file data/nli_training_data/dev.json \
+    --do_train \
+    --do_eval \
+    --max_seq_length 512 \
+    --per_device_train_batch_size 8 \
+    --per_device_eval_batch_size 32 \
+    --overwrite_output_dir \
+    --output_dir /root/autodl-tmp/longeval_nli_model \
+    --gradient_accumulation_steps 8 \
+    --num_train_epochs 5\
+    --warmup_ratio 0.1 \
+    --learning_rate 2e-5 \
+    --fp16 \
+    --logging_steps 10 \
+    --evaluation_strategy epoch \
+    --save_strategy epoch \
+    --save_total_limit 5 \
+    --resume_from_checkpoint /root/autodl-tmp/longeval_nli_model/checkpoint-498

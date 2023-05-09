@@ -1,0 +1,811 @@
+{
+    "gpt35": {
+        "positive": {
+            "error_types": ["person", "predicate", "entity", "subject or object of a predicate", "circumstance", "complex"],
+            "error_types_all": ["person", "predicate", "entity", "subject or object of a predicate", "circumstance", "complex"],
+            "specific_error_types": ["circumstance", "complex"],
+            "sent_prompt": "Given a summary of a passage:{} Help me generate a new correct summary by replacing only a word or phrase. Don't change other words or add new information. Do it step by step: First try to find one {} word or phrase in the sentence. If there is no {} word, do not generate a new summary and end it. If there is a {} word, think of a synonym for it and slightly replace {} word in the sentence. After replacing, make sure that the new summary only changes the {} word and leaves most words unchanged, while being factually consistent with the original one.",
+            "specific_prompt": {
+                "circumstance": "Given a summary of a passage:{} Help me generate a new correct summary by deleting the circumstance word or phrase. Do it step by step: First try to find one circumstance word or phrase (location and/or time of the event) in the sentence. If there is no circumstance word, do not generate a new summary and end it. If there is a circumstance word or phrase, delete it. Lacking some detailed information (e.g., location) is a good change because the summary only extracts the most important information. After deleting, make sure that the new summary is factually consistent with the original one without hallucination or factual error. Don't change too much or add new information, just delete a useless circumstance phrase.",
+                "complex": "Given a summary of a passage:{} Help me generate a new correct summary, please keep details correct. Do it step by step: First think of a complex paraphrase pattern (e.g., complex reorder, passive-active transformation, sentence fusion, and so on), and apply one of these paraphrase patterns to the summary. After paraphrasing, make sure that the new summary is factually consistent with the original one without hallucination or factual error. Don't change too much of the original one. Leave most words unchanged. Don't add new words."
+            },
+
+            "format": {
+                "locator": "^_^",
+                "no_word_found": "{} word is not found: None. No new similar summary with is genereated.",
+                "word_found": "{} word found: {}. Paraphrased summary: ^_^{}",
+                "circumstance": {
+                    "no_word_found": "",
+                    "word_found": "{}"
+                },
+                "complex": {
+                    "no_word_found": "",
+                    "word_found": "{}"
+                }
+            },
+            "cases": [
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "person"
+                    ],
+                    "original_sent": "Albert Einstein, a renowned theoretical physicist, is best known for his theory of relativity and the famous equation E=mc^2.",
+                    "word": "Albert Einstein",
+                    "sent": "Einstein, a renowned theoretical physicist, is best known for his theory of relativity and the famous equation E=mc^2."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "predicate"
+                    ],
+                    "original_sent": "The Wright brothers invented the first successful airplane, revolutionizing the transportation industry and paving the way for modern aviation.",
+                    "word": "invented",
+                    "sent": "The Wright brothers created the first successful airplane, revolutionizing the transportation industry and paving the way for modern aviation."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "entity"
+                    ],
+                    "original_sent": "The Great Wall of China, a UNESCO World Heritage site, was built over several centuries to protect China from invasions and is an architectural marvel.",
+                    "word": "The Great Wall of China",
+                    "sent": "This ancient fortification, a UNESCO World Heritage site, was built over several centuries to protect China from invasions and is an architectural marvel."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "subject or object of a predicate"
+                    ],
+                    "original_sent": "Amazon, an e-commerce giant, has significantly impacted the retail industry by offering a vast range of products, fast shipping, and personalized recommendations.",
+                    "word": "an e-commerce giant",
+                    "sent": "The online marketplace Amazon has significantly impacted the retail industry by offering a vast range of products, fast shipping, and personalized recommendations."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "circumstance"
+                    ],
+                    "original_sent": "In 1986, the Chernobyl disaster, a catastrophic nuclear accident, took place in the Soviet Union, releasing large amounts of radioactive materials into the environment and causing significant long-term health and environmental consequences.",
+                    "word": "In 1986",
+                    "sent": "The Chernobyl disaster, a catastrophic nuclear accident, occurred in the Soviet Union, resulting in the release of large amounts of radioactive materials into the environment and leading to significant long-term health and environmental consequences."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "complex"
+                    ],
+                    "original_sent": "The Industrial Revolution, which occurred between the late 18th and early 19th centuries, was a period of rapid industrialization, urbanization, and technological advancements that drastically transformed society and the global economy",
+                    "word": "occurred",
+                    "sent": "The Industrial Revolution, taking place between the late 18th and early 19th centuries, was a time of fast industrialization, urbanization, and technological progress that significantly altered both society and the worldwide economy."
+                }
+            ]
+        },
+        "negative": {
+            "error_types": ["location", "time", "person", "number", "predicate", "subject or object of a predicate", "pronoun", "negation"],
+            "error_types_all": ["location", "time", "person", "number", "predicate", "subject or object of a predicate", "pronoun", "negation"],
+            "specific_error_types": ["pronoun", "negation"],
+
+            "sent_prompt": "Given a summary of a passage:{} Help me generate a new summary, which is the distortion or fabrication of factual information. Do it step by step: First try to find the {} word or phrases in the sentence. If there is no {} word, do not generate a new summary and end it. If there are {} words, think of some other {} words or phrases to replace one {} word in the sentence. After replacing, generate a new summary of the given summary with hallucination or factual error.",
+            "specific_prompt": {
+                "pronoun": "Given a summary of a passage:{} Help me generate a new summary by pronoun swapping transformation. Do it step by step: First try to find the gender-specific pronouns words in the sentence. If there are no gender-specific pronouns words, do not generate a new summary and end it. If there are gender-specific pronouns words, Next, a randomly chosen pronoun was swapped with a different one from the same pronoun group to ensure syntactic correctness, i.e. a possessive pronoun could only be replaced with another possessive pronoun. After replacing, generate a new summary of the given summary with incorrect pronoun use. Don't change too much, just change the gender-specific pronouns words.",
+                "negation": "Given a summary of a passage:{} Help me generate a new summary by sentence negation transformation. Do it step by step: First try to find the auxiliary verbs in the sentence. If there are no auxiliary verbs, do not generate a new summary and end it. If there are auxiliary verbs, next, to switch the factual meaning, a randomly chosen auxiliary verb was replaced with its negation. Positive sentences would be negated by adding not or n't after the verb, and negative sentences would be switched by removing the negation. After replacing, generate a new summary of the given summary with sentence negation transformation. Don't change too much, just change the auxiliary verbs."
+            },
+
+            "format": {
+                "locator": "^_^",
+                "no_word_found": "{} word is not found: None. No new summary with hallucination is genereated.",
+                "word_found": "{} word found: {}. New summary with hallucination: ^_^{}",
+                "pronoun": {
+                    "no_word_found": "Gender-specific pronoun is not found: None.",
+                    "word_found": "{}"
+                },
+                "negation": {
+                    "no_word_found": "Auxiliary verbs word is not found: None.",
+                    "word_found": "{}"
+                }
+            },
+            "cases": [
+                {
+                    "in_use": false,
+                    "error_types": [
+                        "xxxxxxxxx"
+                    ],
+                    "original_sent": "oooooooooooooooooooo",
+                    "word": "wwwwwwwwwwwww",
+                    "sent": "nnnnnnnnnnnnnnnnnnnnnnnnnnnn"
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "location"
+                    ],
+                    "original_sent": "James Watson was jailed yesterday after causing the death of Brendon Main, 18, in a smash in Aberdeenshire in July 2011 .",
+                    "word": "Aberdeenshire",
+                    "sent": "James Watson was jailed yesterday after causing the death of Brendon Main, 18, in a smash in Madrid in July 2011 ."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "location"
+                    ],
+                    "original_sent": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "word": "no_word",
+                    "sent": ""
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "time"
+                    ],
+                    "original_sent": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011.",
+                    "word": "January 2011",
+                    "sent": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in March 2012 ."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "time"
+                    ],
+                    "original_sent": "He was caught on CCTV putting expensive bottles of wine and meat in bag. ",
+                    "word": "no_word",
+                    "sent": ""
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "person"
+                    ],
+                    "original_sent": "Comments came on the anniversary of Yuri Gagarin's first spaceflight .",
+                    "word": "Sergeant Edwin Mee",
+                    "sent": "Comments came on the anniversary of Harold Henthorn's first spaceflight ."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "number"
+                    ],
+                    "original_sent": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "word": "3",
+                    "sent": "Lukas, 4, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 ."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "number"
+                    ],
+                    "original_sent": "Campaigners claim benefits paid to staff are higher than corporation taxes.",
+                    "word": "no_word",
+                    "sent": ""
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "predicate"
+                    ],
+                    "original_sent": "James Watson was jailed yesterday after causing the death of Brendon Main, 18, in a smash in Aberdeenshire in July 2011 .",
+                    "word": "jailed",
+                    "sent": "James Watson was released yesterday after causing the death of Brendon Main, 18, in a smash in Aberdeenshire in July 2011 ."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "predicate"
+                    ],
+                    "original_sent": "The Golden Gate Bridge, which opened in 1937, was painted orange to enhance its visible in foggy conditions.",
+                    "word": "enhance",
+                    "sent": "The Golden Gate Bridge, which opened in 1937, was painted orange to make it less visible in foggy conditions."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "pronoun"
+                    ],
+                    "original_sent": "Brown was unarmed when he was fatally shot by a white police officer in a St. Louis suburb in August 2014.",
+                    "word": "he",
+                    "sent": "Brown was unarmed when she was fatally shot by a white police officer in a St. Louis suburb in August 2014."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "pronoun"
+                    ],
+                    "original_sent": "She used her bare scalp to explain what the different brain regions are.",
+                    "word": "She",
+                    "sent": "He used her bare scalp to explain what the different brain regions are."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "pronoun"
+                    ],
+                    "original_sent": "It comes after his estranged wife Mona Dotcom filed a $20 million legal claim for cash and assets.",
+                    "word": "his",
+                    "sent": "It comes after your estranged wife Mona Dotcom filed a $20 million legal claim for cash and assets."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "pronoun"
+                    ],
+                    "original_sent": "The study suggests that eating more fruits and vegetables can improve mental health.",
+                    "word": "no_word",
+                    "sent": "Gender-specific pronoun is not found: None."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "subject or object of a predicate"
+                    ],
+                    "original_sent": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 100 years ago.",
+                    "word": "Service",
+                    "sent": "Dream-like memory logs from the White House include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 100 years ago."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "subject or object of a predicate"
+                    ],
+                    "original_sent": "Amanda found out from TV news that her mother had died of a heart attack in 2006 and a month later, discovered she was pregnant by Castro.",
+                    "word": "heart attack",
+                    "sent": "Amanda found out from TV news that her mother had died of leukaemia in 2006 and a month later, discovered she was pregnant by Castro."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "subject or object of a predicate"
+                    ],
+                    "original_sent": "Punxsutawney Phil comes out of hole, sees his shadow. Prognosticating groundhog signals six more weeks of winter . Phil is correct 39 percent of the time, CNN meteorologist says . But National Oceanic and Atmospheric Administration says Phil has\"no predictive skill\"",
+                    "word": "Punxsutawney Phil",
+                    "sent": "Whistlewood Wally comes out of hole, sees his shadow . Prognosticating groundhog signals six more weeks of winter . Wally is correct 39 percent of the time, CNN meteorologist says . But National Oceanic and Atmospheric Administration says Wally has\"no predictive skill\""
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "negation"
+                    ],
+                    "original_sent": "Snow was predicted later in the weekend for Atlanta and areas even further south.",
+                    "word": "was",
+                    "sent": "Snow wasn't predicted later in the weekend for Atlanta and areas even further south."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "negation"
+                    ],
+                    "original_sent": "The company announced that it had made a profit of $1 million in the last quarter.",
+                    "word": "announced",
+                    "sent": "The company didn't announce that it had made a profit of $1 million in the last quarter."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "negation"
+                    ],
+                    "original_sent": "The Eiffel Tower is located in Paris, France.",
+                    "word": "no_word",
+                    "sent": "Auxiliary verbs word is not found: None."
+                },
+                {
+                    "in_use": true,
+                    "error_types": [
+                        "negation"
+                    ],
+                    "original_sent": "The sun rises in the east and sets in the west.",
+                    "word": "no_word",
+                    "sent": "Auxiliary verbs word is not found: None."
+                }
+            ]
+        }
+    },
+    
+
+
+
+    "msg": {
+        "system": {
+            "requirement": "Find the location word in the sentence. If there is no location, tell me \"no_location\".",
+            "iterate_way": "\nWay {}:If the sentence has a {}, replace it with another location to make the meaning of the sentence totally different from the original sentence. Otherwise, return \"not_valid\".",
+            "ret_format": "\nReturn all results in the following format:\n",
+            "iterate_ret_format": "\n[{}]new sentence with {} replaced"
+        },
+        "system_msg": {
+            "msg": "Find the location word in the sentence. If there is no location, tell me \"no_location\"."
+        },
+        "system_prompt": {
+            "concept": {
+                "consistency": "Factual consistency in summarization refers to the accuracy and coherence of the information presented in a summary. It means that the summary should contain only true and relevant information, and that the information should be presented in a way that is consistent with the original text. When generating a summary, it is important to ensure that the facts presented are accurate and that there are no contradictions or errors in the information. Factual consistency is a critical aspect of summarization, as it helps to ensure that the summary is informative and reliable. A summary that is not factually consistent can be misleading or confusing, and can even undermine the credibility of the original source material."
+            },
+            "types": {
+                "structure": "not_valid",
+                "subject": "not_valid",
+                "verb": "not_valid",
+                "object": "not_valid",
+                "preposition": "not_valid",
+                "clause": "not_valid",
+                "number": "not_valid",
+                "sequence": "not_valid",
+                "name": "not_valid",
+                "date_and_time": "not_valid",
+                "location": "Find the name of city, region or country in the sentence. Change the meaning of the sentence by replacing the name with a totally new one. Ensure that the newly generated sentence has a totally different meaning from the original sentence."
+            }
+        },
+        "system_general": {
+            "requirement": "I will give you a sentence. Find words related to number, sequence, name, date, time and location in the sentence. Change the sentence in the following {} ways separately. You need to ensure that the newly generated sentence has a totally different meaning from the original sentence.",
+            "requirement_0": "I will give you a sentence. Analyze the grammatical structure of this sentence. Then change the sentence in the following {} ways separately. You need to make sure that the newly generated sentence has a different meaning from the original sentence.",
+            "iterate_way": "\nWay {}:If the sentence has {}, replace it with another entity to make the meaning of the sentence different from the original sentence. Otherwise, return \"not_valid\".",
+            "ret_format": "\nReturn all results in the following format:\n[0]sentence structure",
+            "iterate_ret_format": "\n[{}]sentence with {} changed"
+        },
+        "system_not_for_last_4": {
+            "requirement": "I will give you a sentence. Analyze the grammatical structure as well as the number, sequence, name, date, time and location of the sentence. Then change the sentence in the following {} ways separately. You need to ensure that the newly generated sentence has a totally different meaning from the original sentence.",
+            "requirement_0": "I will give you a sentence. Analyze the grammatical structure of this sentence. Then change the sentence in the following {} ways separately. You need to make sure that the newly generated sentence has a different meaning from the original sentence.",
+            "iterate_way": "\nWay {}:If the sentence has {}, replace it with another entity to make the meaning of the sentence different from the original sentence. Otherwise, return \"not_valid\".",
+            "ret_format": "\nReturn all results in the following format:\n[0]sentence structure",
+            "iterate_ret_format": "\n[{}]sentence with {} changed"
+        },
+        "cases": [
+            {
+                "in_use": false,
+                "used_for": "types_used",
+                "user": "types_to_use",
+                "assistant": {
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": false,
+                "used_for": "show_all_types",
+                "user": "types_summary",
+                "assistant": {
+                    "structure": "not_valid",
+                    "subject": "not_valid",
+                    "verb": "not_valid",
+                    "object": "not_valid",
+                    "preposition": "not_valid",
+                    "clause": "not_valid",
+                    "number": "not_valid",
+                    "sequence": "not_valid",
+                    "name": "not_valid",
+                    "date_and_time": "not_valid",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "general",
+                "user": "AP McCoy wins second feature race at Grand National festival.",
+                "assistant": {
+                    "structure": "AP McCoy [subject] wins [verb] second feature race [direct object] at Grand National festival [prepositional phrase].",
+                    "subject": "Jockey wins second feature race at Grand National festival.",
+                    "verb": "AP McCoy loses second feature race at Grand National festival.",
+                    "object": "AP McCoy wins beauty pageant at Grand National festival.",
+                    "preposition": "AP McCoy wins second feature race before Grand National festival.",
+                    "clause": "not_valid",
+                    "number": "AP McCoy wins third feature race at Grand National festival.",
+                    "sequence": "AP McCoy wins second feature race before Grand National festival.",
+                    "name": "Donald Trump wins second feature race at Grand National festival.",
+                    "date_and_time": "not_valid",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "general",
+                "user": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 100 years ago.",
+                "assistant": {
+                    "structure": "Service records [subject] include [verb] two of actor Joel Edgerton's great grand-uncles [direct object] who fought in Gallipoli 100 years ago [relative clause].",
+                    "subject": "Documents from the White House include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 100 years ago.",
+                    "verb": "Service records exclude two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 100 years ago.",
+                    "object": "Service records include two of actor Joel Edgerton's horses who fought in Gallipoli 100 years ago.",
+                    "preposition": "not_valid",
+                    "clause": "Service records include two of actor Joel Edgerton's great grand-uncles who won the Nobel Prize in Literature.",
+                    "number": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 230 years ago.",
+                    "sequence": "not_valid",
+                    "name": "Service records include three of actor Bella Hadid's great grand-uncles who fought in Gallipoli 100 years ago.",
+                    "date_and_time": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 17 weeks ago.",
+                    "location": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Serbia 100 years ago."
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "general",
+                "user": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                "assistant": {
+                    "structure": "Lukas [subject], 3 [adjective phrase], was diagnosed [verb] with meningitis [prepositional phrase] just hours after his twin sister, Lili [adverbial phrase], who died from the disease [adverbial phrase] in January 2011 [time expression].",
+                    "subject": "Selena, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "verb": "Lukas, 3, was misdiagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "object": "Lukas, 3, was diagnosed with leukaemia just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "preposition": "Lukas, 3, was diagnosed with meningitis just hours before his twin sister, Lili, who died from the disease in January 2011 .",
+                    "clause": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who completed an expedition to Antarctica.",
+                    "number": "Lukas, 7, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 1897 .",
+                    "sequence": "Lukas, 3, was diagnosed with meningitis just hours before his twin sister, Lili, who died from the disease in January 2011 .",
+                    "name": "Bella, 3, was diagnosed with meningitis just hours after his twin sister, Emily, who died from the disease in January 2011 .",
+                    "date_and_time": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in September 2047 .",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "general",
+                "user": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                "assistant": {
+                    "structure": "Lukas [subject], 3 [adjective phrase], was diagnosed [verb] with meningitis [prepositional phrase] just hours after his twin sister, Lili [adverbial phrase], who died from the disease [adverbial phrase] in January 2011 [time expression].",
+                    "subject": "Selena, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "verb": "Lukas, 3, was misdiagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "object": "Lukas, 3, was diagnosed with leukaemia just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "preposition": "Lukas, 3, was diagnosed with meningitis just hours before his twin sister, Lili, who died from the disease in January 2011 .",
+                    "clause": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who completed an expedition to Antarctica.",
+                    "number": "Lukas, 7, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 1897 .",
+                    "sequence": "Lukas, 3, was diagnosed with meningitis just hours before his twin sister, Lili, who died from the disease in January 2011 .",
+                    "name": "Bella, 3, was diagnosed with meningitis just hours after his twin sister, Emily, who died from the disease in January 2011 .",
+                    "date_and_time": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in September 2047 .",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "number_sequence_name_date_and_time_location",
+                "user": "Jeffrey Pyne, 22, charged with first-degree murder after mother's body found at Michigan home in May 2011 - but denies hurting her .",
+                "assistant": {
+                    "structure": "Jeffrey Pyne [subject], 22 [adjective phrase], charged [verb] with first-degree murder [adverbial phrase] after mother's body [direct object] found [verb] at Michigan home [prepositional phrase] in May 2011 [time expression] - but denies hurting her [conjunction and relative clause].",
+                    "subject": "Zac Efron, 22, charged with first-degree murder after mother's body found at Michigan home in May 2011 - but denies hurting her .",
+                    "verb": "Jeffrey Pyne, 22, cleared of second-degree murder after mother's body discarded at Michigan home in May 2011 - but denies hurting her.",
+                    "object": "Jeffrey Pyne, 22, charged with first-degree murder after father's body found at Michigan home in May 2011 - but denies hurting him.",
+                    "preposition": "not_valid",
+                    "clause": "not_valid",
+                    "number": "Jeffrey Pyne, 33, charged with first-degree murder after mother's body found at Michigan home in May 2003 - but denies hurting her.",
+                    "sequence": "Jeffrey Pyne, 22, charged with first-degree murder before mother's body found at Michigan home in May 2011 - but denies hurting her .",
+                    "name": "Paul Rudd, 22, charged with first-degree murder after mother's body found at Michigan home in May 2011 - but denies hurting her .",
+                    "date_and_time": "Jeffrey Pyne, 22, charged with first-degree murder after mother's body found at Michigan home in June 1978 - but denies hurting her.",
+                    "location": "Jeffrey Pyne, 22, charged with first-degree murder after mother's body found at California home in May 2011 - but denies hurting her."
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "number_sequence_name_date_and_time_location",
+                "user": "James Watson was jailed yesterday after causing the death of Brendon Main, 18, in a smash in Aberdeenshire in July 2011 .",
+                "assistant": {
+                    "structure": "James Watson [subject] was jailed [verb] yesterday [time expression] after causing the death of Brendon Main, 18 [direct object], in a smash in Aberdeenshire [prepositional phrase] in July 2011 [time expression].",
+                    "subject": "Michael B. Jordan was jailed yesterday after causing the death of Brendon Main, 18, in a smash in Aberdeenshire in July 2011 .",
+                    "verb": "James Watson was released yesterday after causing the death of Brendon Main, 18, in a smash in Aberdeenshire in July 2011 .",
+                    "object": "James Watson was jailed yesterday after causing the injury of the innocent cat, in a smash in Aberdeenshire in July 2011 .",
+                    "preposition": "not_valid",
+                    "clause": "not_valid",
+                    "number": "James Watson was jailed yesterday after causing the death of Brendon Main, 28, in a smash in Aberdeenshire in July 2011 .",
+                    "sequence": "James Watson was jailed yesterday before causing the death of Brendon Main, 18, in a smash in Aberdeenshire in July 2011 .",
+                    "name": "Henry Golding was jailed yesterday after causing the death of Brendon Main, 18, in a smash in Aberdeenshire in July 2011 .",
+                    "date_and_time": "James Watson was jailed yesterday after causing the death of Brendon Main, 18, in a smash in Switzerland in May 2035.",
+                    "location": "James Watson was jailed yesterday after causing the death of Brendon Main, 18, in a smash in Madrid in August 2001 ."
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "number_sequence_name_date_and_time_location",
+                "case_type": [
+                    "location"
+                ],
+                "user": "Stephanie Wilson, 28, found the letter in September 2012 after purchasing boots at Saks Fifth Avenue .",
+                "assistant": {
+                    "structure": "Stephanie Wilson [subject], 28 [adjective phrase], found [verb] the letter [direct object] in September 2012 [time expression] after purchasing boots [participial phrase] at Saks Fifth Avenue [prepositional phrase].",
+                    "subject": "Chris Hemsworth, 28, found the letter in September 2012 after purchasing boots at Saks Fifth Avenue .",
+                    "verb": "Stephanie Wilson, 28, lost the letter in September 2012 after purchasing boots at Saks Fifth Avenue.",
+                    "object": "Stephanie Wilson, 28, found the key in September 2012 after purchasing boots at Saks Fifth Avenue.",
+                    "preposition": "not_valid",
+                    "clause": "not_valid",
+                    "number": "Stephanie Wilson, 17, found the letter in September 2012 after purchasing boots at Saks Fifth Avenue.",
+                    "sequence": "Stephanie Wilson, 28, found the letter in September 2012 before purchasing boots at Saks Fifth Avenue .",
+                    "name": "Jennifer Brown, 28, found the letter in September 2012 after purchasing boots at Saks Fifth Avenue .",
+                    "date_and_time": "Stephanie Wilson, 28, found the letter in July 1998 after purchasing boots at Saks Fifth Avenue .",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "number_sequence_name_date_and_time_location",
+                "case_type": [
+                    "location"
+                ],
+                "user": "Cengiz Nuray, 17, vanished in April 1995 after leaving his belongings behind on a beach in Santa Cruz and going for a walk alone .",
+                "assistant": {
+                    "structure": "Cengiz Nuray [subject], 17 [adjective phrase], vanished [verb] in April 1995 [time expression] after leaving his belongings [adverbial phrase] behind on a beach in Santa Cruz [prepositional phrase] and going for a walk alone [adverbial phrase].",
+                    "subject": "Chris Evans, 17, vanished in April 1995 after leaving his belongings behind on a beach in Santa Cruz and going for a walk alone .",
+                    "verb": "Cengiz Nuray, 17, appeared in April 1995 after leaving his belongings behind on a beach in Santa Cruz and going for a walk alone.",
+                    "object": "Cengiz Nuray, 17, vanished in April 1995 after leaving his car behind on a beach in Santa Cruz and going for a walk alone.",
+                    "preposition": "Cengiz Nuray, 17, vanished in April 1995 before leaving his belongings behind on a beach in Santa Cruz and going for a walk alone.",
+                    "clause": "not_valid",
+                    "number": "Cengiz Nuray, 43, vanished in April 1922 after leaving his belongings behind on a beach in Santa Cruz and going for a walk alone .",
+                    "sequence": "Cengiz Nuray, 17, vanished in April 1995 before leaving his belongings behind on a beach in Santa Cruz and going for a walk alone .",
+                    "name": "Gal Gadot, 17, vanished in April 1995 after leaving his belongings behind on a beach in Santa Cruz and going for a walk alone .",
+                    "date_and_time": "Cengiz Nuray, 17, vanished in January 1934 after leaving his belongings behind on a beach in Santa Cruz and going for a walk alone .",
+                    "location": "Cengiz Nuray, 17, vanished in April 1995 after leaving his belongings behind on a beach in Mumbai and going for a walk alone."
+                }
+            },
+            {
+                "in_use": true,
+                "used_for": "number_sequence_name_date_and_time_location",
+                "case_type": [
+                    "location"
+                ],
+                "user": "Hayley Sanders, now 23, developed an infection after the birth of her son, Jayden, at Birmingham's Heartlands Hospital in December 2009 .",
+                "assistant": {
+                    "structure": "Hayley Sanders [subject], now 23 [adjective phrase], developed [verb] an infection [direct object] after the birth of her son, Jayden [adverbial phrase], at Birmingham's Heartlands Hospital [prepositional phrase] in December 2009 [time expression].",
+                    "subject": "Hayden Peters, now 23, developed an infection after the birth of her son, Jayden, at Birmingham's Heartlands Hospital in December 2009.",
+                    "verb": "Hayley Sanders, now 23, recovered from an infection after the birth of her son, Jayden, at Birmingham's Heartlands Hospital in December 2009.",
+                    "object": "Hayley Sanders, now 23, developed a fever after the birth of her daughter, Jayden, at Birmingham's Heartlands Hospital in December 2009.",
+                    "preposition": "Hayley Sanders, now 23, developed an infection during the birth of her son, Jayden, at Birmingham's Heartlands Hospital in December 2009.",
+                    "clause": "not_valid",
+                    "number": "Hayley Sanders, now 27, developed an infection after the birth of her son, Jayden, at Birmingham's Heartlands Hospital in December 2005.",
+                    "sequence": "Hayley Sanders, now 23, developed an infection before the birth of her son, Jayden, at Birmingham's Heartlands Hospital in December 2009 .",
+                    "name": "Kendall Jenner, now 23, developed an infection after the birth of her son, Jayden, at Birmingham's Heartlands Hospital in December 2009 .",
+                    "date_and_time": "Hayley Sanders, now 23, developed an infection after the birth of her son, Jayden, at Birmingham's Heartlands Hospital in January 2009.",
+                    "location": "Hayley Sanders, now 23, developed an infection after the birth of her son, Jayden, at London's Heartlands Hospital in December 2009."
+                }
+            }
+        ]
+    },
+    "msg_0": {
+        "system": {
+            "requirement": "I will give you a sentence. Analyze the grammatical structure as well as the number, sequence, name, date, time and location of the sentence. Then change the sentence in the following {} ways separately. You need to ensure that the newly generated sentence has a totally different meaning from the original sentence.",
+            "requirement_0": "I will give you a sentence. Analyze the grammatical structure of this sentence. Then change the sentence in the following {} ways separately. You need to make sure that the newly generated sentence has a different meaning from the original sentence.",
+            "iterate_way": "\nWay {}:If the sentence has {}, replace it with another entity. Otherwise, return \"not_valid\".",
+            "ret_format": "\nReturn all results in the following format:\n[0]sentence structure",
+            "iterate_ret_format": "\n[{}]sentence with {} replaced"
+        },
+        "cases": [
+            {
+                "in_use": false,
+                "user": "types_to_use",
+                "assistant": {
+                    "structure": "not_valid",
+                    "number": "not_valid",
+                    "sequence": "not_valid",
+                    "name": "not_valid",
+                    "date_and_time": "not_valid",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": false,
+                "user": "types_summary",
+                "assistant": {
+                    "structure": "not_valid",
+                    "subject": "not_valid",
+                    "verb": "not_valid",
+                    "object": "not_valid",
+                    "preposition": "not_valid",
+                    "clause": "not_valid",
+                    "number": "not_valid",
+                    "sequence": "not_valid",
+                    "name": "not_valid",
+                    "date_and_time": "not_valid",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": true,
+                "user": "The 25-year-old will face Marco Fu in second round of World Championship.",
+                "assistant": {
+                    "structure": "The 25-year-old [subject] will [modal verb] face [verb] Marco Fu [direct object] in second round [prepositional phrase] of World Championship [object of preposition].",
+                    "subject": "The one wearing glasses will face Marco Fu in second round of World Championship.",
+                    "verb": "The 25-year-old won't kiss Marco Fu in second round of World Championship.",
+                    "object": "The 25-year-old will face Ronnie O'Sullivan in second round of Speech competition.",
+                    "preposition": "The 25-year-old will face Marco Fu after second round of World Championship.",
+                    "clause": "not_valid",
+                    "number": "The 18-year-old will face Marco Fu in first round of World Championship.",
+                    "sequence": "The 25-year-old has already faced Marco Fu in second round of World Championship.",
+                    "name": "The 25-year-old will face Taylor Swift in second round of World Championship.",
+                    "date_and_time": "not_valid",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": false,
+                "user": "T-shirts joking about stalking are sold online in various US and UK stores .",
+                "assistant": {
+                    "structure": "T-shirts [subject] joking [gerund] about stalking [prepositional phrase] are sold [verb] online [adverb] in various US and UK stores [prepositional phrase].",
+                    "subject": "Shoes joking stalking are sold online in various US and UK stores.",
+                    "verb": "T-shirts condemning stalking are discussed online in various US and UK stores .",
+                    "object": "not_valid",
+                    "preposition": "not_valid",
+                    "clause": "not_valid",
+                    "number": "not_valid",
+                    "sequence": "not_valid",
+                    "name": "not_valid",
+                    "date_and_time": "not_valid",
+                    "location": "T-shirts joking about stalking are sold online in various China and Sweden stores ."
+                }
+            },
+            {
+                "in_use": false,
+                "user": "AP McCoy wins second feature race at Grand National festival.",
+                "assistant": {
+                    "structure": "AP McCoy [subject] wins [verb] second feature race [direct object] at Grand National festival [prepositional phrase].",
+                    "subject": "Jockey wins second feature race at Grand National festival.",
+                    "verb": "AP McCoy loses second feature race at Grand National festival.",
+                    "object": "AP McCoy wins beauty pageant at Grand National festival.",
+                    "preposition": "AP McCoy wins second feature race before Grand National festival.",
+                    "clause": "not_valid",
+                    "number": "AP McCoy wins third feature race at Grand National festival.",
+                    "sequence": "AP McCoy wins second feature race before Grand National festival.",
+                    "name": "Donald Trump wins second feature race at Grand National festival.",
+                    "date_and_time": "not_valid",
+                    "location": "AP McCoy wins second feature race at Hong Kong Film Festival."
+                }
+            },
+            {
+                "in_use": true,
+                "user": "The University of Bournemouth-led project aims to investigate the history of the birds, which could tell scientists more about the people who kept them .",
+                "assistant": {
+                    "structure": "The University of Bournemouth-led project [subject] aims [verb] to investigate [infinitive phrase] the history [direct object] of the birds [indirect object], which [relative pronoun] could tell [verb] scientists [direct object] more about the people [indirect object] who kept them [relative clause]. ",
+                    "subject": "The University of Cambridge-led project aims to investigate the history of the birds, which could tell scientists more about the people who kept them. ",
+                    "verb": "The University of Bournemouth-led project aims to destroy the history of the birds, which could tell scientists more about the people who kept them. ",
+                    "object": "The Restaurant of Bournemouth-led practise aims to investigate the future of the foxes, which could tell farmers more about the people who kept them .",
+                    "preposition": "not_valid",
+                    "clause": "The University of Bournemouth-led project aims to investigate the history of the birds, which may be able to tell the police details of the mysterious time.",
+                    "number": "not_valid",
+                    "sequence": "not_valid",
+                    "name": "The University of Cambridge-led project aims to investigate the history of the birds, which could tell scientists more about the people who kept them .",
+                    "date_and_time": "not_valid",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": false,
+                "user": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 100 years ago.",
+                "assistant": {
+                    "structure": "Service records [subject] include [verb] two of actor Joel Edgerton's great grand-uncles [direct object] who fought in Gallipoli 100 years ago [relative clause].",
+                    "subject": "Documents from the White House include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 100 years ago.",
+                    "verb": "Service records exclude two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 100 years ago.",
+                    "object": "Service records include two of actor Joel Edgerton's horses who fought in Gallipoli 100 years ago.",
+                    "preposition": "not_valid",
+                    "clause": "Service records include two of actor Joel Edgerton's great grand-uncles who won the Nobel Prize in Literature.",
+                    "number": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 230 years ago.",
+                    "sequence": "not_valid",
+                    "name": "Service records include three of actor Bella Hadid's great grand-uncles who fought in Gallipoli 100 years ago.",
+                    "date_and_time": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Gallipoli 17 weeks ago.",
+                    "location": "Service records include two of actor Joel Edgerton's great grand-uncles who fought in Serbia 100 years ago."
+                }
+            },
+            {
+                "in_use": true,
+                "user": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                "assistant": {
+                    "structure": "Lukas [subject], 3 [adjective phrase], was diagnosed [verb] with meningitis [prepositional phrase] just hours after his twin sister, Lili [adverbial phrase], who died from the disease [adverbial phrase] in January 2011 [time expression].",
+                    "subject": "Selena, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "verb": "Lukas, 3, was misdiagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "object": "Lukas, 3, was diagnosed with leukaemia just hours after his twin sister, Lili, who died from the disease in January 2011 .",
+                    "preposition": "Lukas, 3, was diagnosed with meningitis just hours before his twin sister, Lili, who died from the disease in January 2011 .",
+                    "clause": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who completed an expedition to Antarctica.",
+                    "number": "Lukas, 7, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in January 1897 .",
+                    "sequence": "Lukas, 3, was diagnosed with meningitis just hours before his twin sister, Lili, who died from the disease in January 2011 .",
+                    "name": "Bella, 3, was diagnosed with meningitis just hours after his twin sister, Emily, who died from the disease in January 2011 .",
+                    "date_and_time": "Lukas, 3, was diagnosed with meningitis just hours after his twin sister, Lili, who died from the disease in September 2047 .",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": true,
+                "user": "By 5-4 vote, Supreme Court allows Navy exercises in whale habitat .",
+                "assistant": {
+                    "structure": "By 5-4 vote [prepositional phrase], Supreme Court [subject] allows [verb] Navy exercises [direct object] in whale habitat [prepositional phrase]. ",
+                    "subject": "By 5-4 vote, Congress allows Navy exercises in whale habitat. ",
+                    "verb": "By 5-4 vote, Supreme Court prohibits Navy exercises in whale habitat. ",
+                    "object": "By 5-4 vote, Supreme Court allows basketball team exercises in whale habitat .",
+                    "preposition": "Despite 5-4 vote, Supreme Court allows Navy exercises in whale habitat .",
+                    "clause": "not_valid",
+                    "number": "By 3-7 vote, Supreme Court allows Navy exercises in whale habitat .",
+                    "sequence": "not_valid",
+                    "name": "By 5-4 vote, Senate allows Navy exercises in whale habitat. ",
+                    "date_and_time": "not_valid",
+                    "location": "By 5-4 vote, Supreme Court allows Navy exercises in lion habitat."
+                }
+            },
+            {
+                "in_use": false,
+                "user": "Authorities allege Moschetto hired accomplices to burn down the practice of former associate.",
+                "assistant": {
+                    "structure": "Authorities [subject] allege [verb] Moschetto [direct object] hired [verb] accomplices [indirect object] to burn down [infinitive phrase] the practice [direct object] of former associate [prepositional phrase].",
+                    "subject": "Beggars allege Moschetto hired accomplices to burn down the practice of former associate.",
+                    "verb": "Authorities doubt Moschetto witnessed accomplices to burn down the practice of former associate.",
+                    "object": "Authorities allege Smith hired troops to burn down the farm of former associate.",
+                    "preposition": "not_valid",
+                    "clause": "not_valid",
+                    "number": "not_valid",
+                    "sequence": "not_valid",
+                    "name": "not_valid",
+                    "date_and_time": "not_valid",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": false,
+                "user": "Police officers escort the funeral procession to the service.",
+                "assistant": {
+                    "structure": "Police officers [subject] escort [verb] the funeral procession [direct object] to [preposition] the service [direct object].",
+                    "subject": "Pupils escort the funeral procession to the service.",
+                    "verb": "Police officers attend the funeral procession to the service.",
+                    "object": "Police officers escort the funeral ceremony to the service.",
+                    "preposition": "Police officers escort the funeral procession from the service.",
+                    "clause": "not_valid",
+                    "number": "not_valid",
+                    "sequence": "not_valid",
+                    "name": "not_valid",
+                    "date_and_time": "not_valid",
+                    "location": "not_valid"
+                }
+            },
+            {
+                "in_use": false,
+                "user": "Ronan Ghosh, 39, was shopping at Tesco store in Birmingham, West Mids.",
+                "assistant": {
+                    "structure": "Ronan Ghosh, 39 [subject], was shopping [verb] at Tesco store [prepositional phrase] in Birmingham, West Mids [prepositional phrase].",
+                    "subject": "A black cat, was shopping at Tesco store in Birmingham, West Mids.",
+                    "verb": "Ronan Ghosh, 39, was sleeping at Tesco store in Birmingham, West Mids.",
+                    "object": "not_valid",
+                    "preposition": "Ronan Ghosh, 39, was shopping in Tesco store near Birmingham, West Mids.",
+                    "clause": "not_valid",
+                    "number": "Ronan Ghosh, 47, was shopping at Tesco store in Birmingham, West Mids.",
+                    "sequence": "not_valid",
+                    "name": "not_valid",
+                    "date_and_time": "not_valid",
+                    "location": "Ronan Ghosh, 39, was shopping at Lego store in Washington, West Mids."
+                }
+            }
+        ]
+    },
+    "subject": {
+        "prompt": "Change the meaning of the sentence by changing the subject of the sentence in the term of grammar and ensure that the change is no more than 2 words.",
+        "cases": [
+            {
+                "original_": "Police officers escort the funeral procession to the service.",
+                "perturbed": "The pupil escort the funeral procession to the service."
+            },
+            {
+                "original_": "Authorities allege Moschetto hired accomplices to burn down the practice of former associate.",
+                "perturbed": "Beggar allege Moschetto hired accomplices to burn down the practice of former associate."
+            },
+            {
+                "original_": "Mothers now share a bond and families have had dinner together.",
+                "perturbed": "Fathers now share a bond and families have had dinner together."
+            }
+        ]
+    },
+    "predicate": {
+        "prompt": "Change the meaning of the sentence by changing the predicate of the sentence in the term of grammar and ensure that the change is no more than 2 words.",
+        "cases": [
+            {
+                "original_": "Police officers escort the funeral procession to the service.",
+                "perturbed": "Police officers escort the coronation procession to the service."
+            },
+            {
+                "original_": "Authorities say he drunkenly took a patrol boat out on the Tchefuncte River then crashed it into T-River bar and restaurant.",
+                "perturbed": "Authorities say he drunkenly took a patrol car out on the Tchefuncte River then crashed it into T-River shop and shrub."
+            },
+            {
+                "original_": "Mothers now share a bond and families have had dinner together.",
+                "perturbed": "Mothers now share a book and families have had lunch together."
+            }
+        ]
+    },
+    "name": {
+        "prompt": "Change the meaning of the sentence by changing the name of the sentence in the term of grammar and ensure that the change is no more than 2 words. If there is no name in the sentence, return \"no_name\".",
+        "cases": [
+            {
+                "original_": "Celebrity backers Tracy Emin and David Walliams speeded the plans along.",
+                "perturbed": "Celebrity backers Inter Milan and Mo Farah speeded the plans along."
+            },
+            {
+                "original_": "Authorities allege Moschetto hired accomplices to burn down the practice of former associate.",
+                "perturbed": "Authorities allege Danny hired accomplices to burn down the practice of former associate."
+            },
+            {
+                "original_": "A lawyer for Dr. Anthony Moschetto says the charges against him are baseless.",
+                "perturbed": "A lawyer for Dr. Sergeant Edwin says the charges against him are baseless."
+            },
+            {
+                "original_": "Company has defended the style and players have been positive.",
+                "perturbed": "no_name"
+            }
+        ]
+    }
+}

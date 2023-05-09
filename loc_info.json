@@ -1,0 +1,7 @@
+{
+    "root": "/Users/gmh/Library/CloudStorage/OneDrive-zju.edu.cn/code/python_vscode/NLP_zly/ROSE_NLI/",
+    "prompt": "prompt/prompt.json",
+    "output_dir": "output",
+    "output_in_time": "output/output_in_time.json",
+    "api_keys": "utils/api_keys.txt"
+}
